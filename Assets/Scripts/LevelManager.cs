@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject respawnParticle;
 	public float respawnDelay;
 
+	public int pointPenaltyOnDeath;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +35,8 @@ public class LevelManager : MonoBehaviour {
 		Instantiate (deathParticle, player.transform.position, player.transform.rotation);
 		player.enabled = false;
 		player.renderer.enabled = false;
+		player.rigidbody2D.velocity = Vector2.zero;
+		ScoreManager.AddPoints (-pointPenaltyOnDeath);
 		Debug.Log("Player Respawn");
 		yield return new WaitForSeconds (respawnDelay);
 		player.transform.position = currentCheckpoint.transform.position;

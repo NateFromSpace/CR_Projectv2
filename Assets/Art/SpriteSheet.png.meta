@@ -9,6 +9,7 @@ TextureImporter:
     21300008: Player_walking_1
     21300010: Player_walking_2
     21300012: Player_walking_3
+    21300014: Coin_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -121,6 +122,16 @@ TextureImporter:
         y: 1008
         width: 84
         height: 217
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coin_1
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 372
+        width: 65
+        height: 68
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

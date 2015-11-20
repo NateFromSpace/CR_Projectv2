@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
+	private float moveVelocity;
 	public float jumpHeight;
 
 	public Transform groundCheck;
@@ -48,16 +49,22 @@ public class PlayerController : MonoBehaviour {
 
 		}
 
+		moveVelocity = 0f;
+
 
 		if (Input.GetKey(KeyCode.D)) 
 		{
-			rigidbody2D.velocity = new Vector2(moveSpeed, rigidbody2D.velocity.y);
+			//rigidbody2D.velocity = new Vector2(moveSpeed, rigidbody2D.velocity.y);
+			moveVelocity = moveSpeed;
 		}
 
 		if (Input.GetKey(KeyCode.A)) 
 		{
-			rigidbody2D.velocity = new Vector2(-moveSpeed, rigidbody2D.velocity.y);
+			//rigidbody2D.velocity = new Vector2(-moveSpeed, rigidbody2D.velocity.y);
+			moveVelocity = -moveSpeed;
 		}
+
+		rigidbody2D.velocity = new Vector2 (moveVelocity, rigidbody2D.velocity.y);
 
 		anim.SetFloat ("Speed", Mathf.Abs(rigidbody2D.velocity.x));
 
